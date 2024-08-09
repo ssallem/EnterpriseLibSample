@@ -16,7 +16,7 @@ namespace SioDepolyment
                 //var exports = Container.GetExport<MainWindow>();
                 //var exportDebugs = Container.Catalog;
                 //var list = exportDebugs.GetEnumerator();
-
+                // 오류 체크
                 return Container.GetExportedValue<MainWindow>();
             }
             catch (Exception ex)
