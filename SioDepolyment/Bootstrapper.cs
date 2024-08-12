@@ -21,6 +21,7 @@ namespace SioDepolyment
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 throw;
             }
         }
@@ -50,7 +51,7 @@ namespace SioDepolyment
 
                 // add other assembly
                 AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Services.EnterLib.LogService).Assembly));
-                AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Services.EnterLib.EnterLibService).Assembly));
+                // AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Services.EnterLib.EnterLibService).Assembly));
                 AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(MainWindow).Assembly));
             }
             catch (Exception ex)

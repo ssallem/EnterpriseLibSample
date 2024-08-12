@@ -21,7 +21,9 @@ namespace PrismEnterpriseSample
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            _logService.Write("첫 로그");
+            _logService.Write("Information -- Optimize", "Optimize", 3, 2000, System.Diagnostics.TraceEventType.Information);
+            _logService.Write("Error -- Optimize", "Optimize", 3, 2000, System.Diagnostics.TraceEventType.Error);
+            _logService.Write("Warning -- test", "Warning", 3, 2000, System.Diagnostics.TraceEventType.Warning);
         }
     }
 }

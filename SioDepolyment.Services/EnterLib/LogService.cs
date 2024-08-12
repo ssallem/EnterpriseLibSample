@@ -3,6 +3,7 @@ using Microsoft.Practices.Prism.Logging;
 using PrismEnterpriseSample.Interface;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 
 namespace SioDepolyment.Services.EnterLib
 {
@@ -17,6 +18,10 @@ namespace SioDepolyment.Services.EnterLib
         public void Write(string message, string categoryName) => Logger.Writer?.Write(message, categoryName);
 
         public void Write(string message, Category category, Priority priority) => Logger.Writer?.Write(message, category.ToString(), (int)priority);
+        public void Write(string message, string category, int priority, int eventId, TraceEventType severity)
+        {
+            Logger.Writer?.Write(message, category, priority, eventId, severity);
+        }
 
         public void Write(string message, string categoryName, string workspaceName, string pid, string ipaddr, string userId)
         {
@@ -31,5 +36,6 @@ namespace SioDepolyment.Services.EnterLib
                 };
             }
         }
+
     }
 }
